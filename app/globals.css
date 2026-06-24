@@ -1,0 +1,128 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #F5F1EB;
+  --foreground: #2A2520;
+  --card: #FFFFFF;
+  --card-foreground: #2A2520;
+  --popover: #FFFFFF;
+  --popover-foreground: #2A2520;
+  --primary: #D14C18;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F4D68C;
+  --secondary-foreground: #2A2520;
+  --accent: #7C9DD2;
+  --accent-foreground: #FFFFFF;
+  --tertiary: #673C33;
+  --tertiary-foreground: #FFFFFF;
+  --quaternary: #B2AB2B;
+  --quaternary-foreground: #FFFFFF;
+  --muted: #E8E3D8;
+  --muted-foreground: #6B6460;
+  --destructive: #D14C18;
+  --destructive-foreground: #FFFFFF;
+  --border: #E8E3D8;
+  --input: #F9F7F3;
+  --ring: #D14C18;
+  --radius: 0.625rem;
+}
+
+.dark {
+  --background: #1A1612;
+  --foreground: #F5F1EB;
+  --card: #2A2520;
+  --card-foreground: #F5F1EB;
+  --popover: #2A2520;
+  --popover-foreground: #F5F1EB;
+  --primary: #E8652E;
+  --primary-foreground: #FFFFFF;
+  --secondary: #D4A85F;
+  --secondary-foreground: #1A1612;
+  --accent: #8AAAE6;
+  --accent-foreground: #1A1612;
+  --tertiary: #8B5A4C;
+  --tertiary-foreground: #FFFFFF;
+  --quaternary: #C4BD3F;
+  --quaternary-foreground: #1A1612;
+  --muted: #3F3A35;
+  --muted-foreground: #B8AFA8;
+  --border: #3F3A35;
+  --input: #3F3A35;
+  --ring: #E8652E;
+}
+
+@layer base {
+  * {
+    @apply border-[color:var(--border)] outline-[color:var(--ring)]/50;
+  }
+  body {
+    @apply bg-[color:var(--background)] text-[color:var(--foreground)];
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[color:var(--primary)] text-[color:var(--primary-foreground)] hover:opacity-90 px-6 py-3 rounded-full font-medium transition-opacity;
+  }
+  
+  .btn-secondary {
+    @apply bg-[color:var(--secondary)] text-[color:var(--secondary-foreground)] hover:opacity-90 px-6 py-3 rounded-full font-medium transition-opacity;
+  }
+  
+  .btn-accent {
+    @apply bg-[color:var(--accent)] text-[color:var(--accent-foreground)] hover:opacity-90 px-6 py-3 rounded-full font-medium transition-opacity;
+  }
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
